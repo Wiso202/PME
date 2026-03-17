@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Services | Expertise sur-mesure pour PME</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <style>
+        .service-detail-card {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            margin-bottom: 80px;
+        }
+        
+        .service-detail-card:nth-child(even) {
+            direction: rtl; /* Inverse l'ordre image/texte pour le design */
+        }
+        
+        .service-detail-card:nth-child(even) .service-text {
+            direction: ltr; /* Remet le texte dans le bon sens */
+        }
+
+        .service-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-md);
+        }
+
+        .service-list {
+            margin: 20px 0;
+            padding-left: 20px;
+        }
+
+        .service-list li {
+            margin-bottom: 10px;
+            position: relative;
+            list-style: none;
+        }
+
+        .service-list li::before {
+            content: "✓";
+            color: var(--accent);
+            font-weight: bold;
+            position: absolute;
+            left: -20px;
+        }
+
+        @media (max-width: 800px) {
+            .service-detail-card { grid-template-columns: 1fr; gap: 30px; }
+            .service-detail-card:nth-child(even) { direction: ltr; }
+            .service-image img { height: 250px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar scrolled">
+        <div class="logo">CORP<span>SERVE</span></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="a-propos.html">À Propos</a></li>
+            <li><a href="services.html" class="active">Services</a></li>
+            <li><a href="realisations.html">Réalisations</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <a href="contact.html" class="btn btn-accent">Devis Rapide</a>
+    </nav>
+
+    <header style="background: var(--primary); color: white; padding: 120px 8% 60px; text-align: center;">
+        <h1 style="color: white;">Nos Solutions Métiers</h1>
+        <p style="opacity: 0.8;">Un accompagnement complet pour transformer vos défis en opportunités.</p>
+    </header>
+
+    <main class="section-padding">
+        
+        <div class="service-detail-card">
+            <div class="service-text">
+                <span style="color: var(--accent); font-weight: 800;">01. CONSEIL</span>
+                <h2 style="margin-top: 10px;">Audit & Stratégie Commerciale</h2>
+                <p style="color: var(--text-muted);">Nous analysons vos performances actuelles pour identifier les leviers de croissance inexploités au sein de votre entreprise.</p>
+                <ul class="service-list">
+                    <li>Étude de marché locale (Bénin & Sous-région)</li>
+                    <li>Optimisation des processus de vente</li>
+                    <li>Planification stratégique annuelle</li>
+                    <li>Formation des équipes commerciales</li>
+                </ul>
+                <a href="contact.html" class="btn btn-primary">Demander un audit</a>
+            </div>
+            <div class="service-image">
+                <img src="https://images.pexels.com/photos/3183153/pexels-photo-3183153.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Audit">
+            </div>
+        </div>
+
+        <div class="service-detail-card">
+            <div class="service-text">
+                <span style="color: var(--accent); font-weight: 800;">02. DIGITAL</span>
+                <h2 style="margin-top: 10px;">Transformation Digitale & IT</h2>
+                <p style="color: var(--text-muted);">Intégrez la technologie au cœur de votre PME pour gagner en temps et en productivité au quotidien.</p>
+                <ul class="service-list">
+                    <li>Mise en place de logiciels de gestion (ERP/CRM)</li>
+                    <li>Création de sites web et plateformes métiers</li>
+                    <li>Sécurisation des données d'entreprise</li>
+                    <li>Transition vers le Cloud</li>
+                </ul>
+                <a href="contact.html" class="btn btn-primary">Moderniser mon entreprise</a>
+            </div>
+            <div class="service-image">
+                <img src="https://images.pexels.com/photos/3184296/pexels-photo-3184296.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Digital">
+            </div>
+        </div>
+
+    </main>
+
+    <section style="background: var(--bg-light); padding: 80px 8%; text-align: center;">
+        <h2 style="margin-bottom: 20px;">Vous avez un besoin spécifique ?</h2>
+        <p style="margin-bottom: 30px; color: var(--text-muted);">Notre équipe conçoit également des solutions sur-mesure selon votre cahier des charges.</p>
+        <a href="javascript:void(0);" onclick="openWhatsApp()" class="btn btn-accent" style="display: inline-flex; align-items: center; gap: 10px;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="20"> Discuter avec un expert
+        </a>
+    </section>
+
+    <footer style="background: var(--primary-light); color: white; padding: 40px 8%; text-align: center;">
+        <p style="font-size: 0.8rem; opacity: 0.6;">© 2026 NomDeL'Entreprise — Solutions pour PME.</p>
+    </footer>
+
+    <script src="js/scripts.js"></script>
+    <script src="js/form-handler.js"></script>
+</body>
+</html>

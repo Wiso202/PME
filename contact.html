@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contactez-nous | NomDeL'Entreprise</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <style>
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 60px;
+            margin-top: 50px;
+        }
+
+        /* Infos de contact */
+        .info-box {
+            background: var(--primary);
+            color: white;
+            padding: 50px;
+            border-radius: var(--radius);
+            height: fit-content;
+        }
+
+        .info-item {
+            margin-bottom: 35px;
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .info-item .icon {
+            font-size: 1.5rem;
+            color: var(--accent);
+        }
+
+        .info-item h3 {
+            color: white;
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+
+        .info-item p {
+            opacity: 0.8;
+            font-size: 0.95rem;
+        }
+
+        /* Formulaire */
+        .contact-form {
+            background: white;
+            padding: 20px 0;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 700;
+            font-size: 0.85rem;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            color: var(--primary);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: var(--radius);
+            font-family: inherit;
+            background: #fdfdfd;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent);
+            background: white;
+        }
+
+        @media (max-width: 900px) {
+            .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+            .info-box { padding: 30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar scrolled">
+        <div class="logo">CORP<span>SERVE</span></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="a-propos.html">À Propos</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="realisations.html">Réalisations</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+        <a href="tel:+2290100000000" class="btn btn-accent">Appeler Direct</a>
+    </nav>
+
+    <header style="background: var(--bg-light); padding: 140px 8% 60px; text-align: center;">
+        <span style="color: var(--accent); font-weight: 800; text-transform: uppercase; letter-spacing: 2px;">Restons en contact</span>
+        <h1 style="margin-top: 10px;">Comment pouvons-nous vous aider ?</h1>
+    </header>
+
+    <main class="section-padding">
+        <div class="contact-grid">
+            
+            <div class="info-box">
+                <h2 style="color: white; margin-bottom: 40px;">Coordonnées</h2>
+                
+                <div class="info-item">
+                    <div class="icon">📍</div>
+                    <div>
+                        <h3>Notre Siège</h3>
+                        <p>Avenue Steinmetz, Immeuble CORP, <br>Cotonou, Bénin</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="icon">📞</div>
+                    <div>
+                        <h3>Téléphone</h3>
+                        <p>+229 01 00 00 00 00</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="icon">✉️</div>
+                    <div>
+                        <h3>Email Professionnel</h3>
+                        <p>contact@votreentreprise.bj</p>
+                    </div>
+                </div>
+
+                <div style="margin-top: 50px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.1);">
+                    <p style="margin-bottom: 15px; font-weight: 600;">Besoin d'une réponse rapide ?</p>
+                    <a href="javascript:void(0);" onclick="openWhatsApp()" class="btn btn-accent" style="width: 100%;">
+                        Démarrer un chat WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <form id="contactForm">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div class="form-group">
+                            <label>Nom Complet</label>
+                            <input type="text" class="form-control" placeholder="Ex: Jean Houndé" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Votre Email</label>
+                            <input type="email" class="form-control" placeholder="exemple@mail.com" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Sujet de votre demande</label>
+                        <select class="form-control">
+                            <option>Demande de devis</option>
+                            <option>Partenariat stratégique</option>
+                            <option>Recrutement</option>
+                            <option>Autre chose</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Votre Message</label>
+                        <textarea class="form-control" rows="6" placeholder="Expliquez-nous brièvement votre projet..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%; padding: 20px;">Envoyer le message</button>
+                </form>
+            </div>
+
+        </div>
+    </main>
+
+    <div style="width: 100%; height: 450px; background: #eee;">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15858.988022830386!2d2.41870185!3d6.35558835!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1023559902633009%3A0xc3c6b240562e84d9!2sCotonou!5e0!3m2!1sfr!2sbj!4v1700000000000" 
+        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+
+    <footer style="background: var(--primary-light); color: white; padding: 40px 8%; text-align: center;">
+        <p style="font-size: 0.8rem; opacity: 0.6;">© 2026 NomDeL'Entreprise — Bâtissons l'avenir ensemble.</p>
+    </footer>
+
+    <script src="js/scripts.js"></script>
+    <script src="js/form-handler.js"></script>
+</body>
+</html>

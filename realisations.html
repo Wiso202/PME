@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Réalisations | Projets & Succès</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <style>
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .project-card {
+            position: relative;
+            border-radius: var(--radius);
+            overflow: hidden;
+            height: 450px;
+            cursor: pointer;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .project-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .project-overlay {
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            background: linear-gradient(transparent, rgba(0,53,102,0.95));
+            padding: 40px 30px;
+            color: white;
+            transform: translateY(20px);
+            transition: var(--transition);
+        }
+
+        .project-card:hover .project-img {
+            transform: scale(1.1);
+        }
+
+        .project-card:hover .project-overlay {
+            transform: translateY(0);
+        }
+
+        .project-tag {
+            background: var(--accent);
+            color: var(--primary);
+            padding: 5px 12px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            border-radius: 50px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        @media (max-width: 600px) {
+            .project-card { height: 350px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar scrolled">
+        <div class="logo">CORP<span>SERVE</span></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="a-propos.html">À Propos</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="realisations.html" class="active">Réalisations</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <a href="contact.html" class="btn btn-accent">Projet en tête ?</a>
+    </nav>
+
+    <header style="background: var(--primary); color: white; padding: 120px 8% 60px; text-align: center;">
+        <h1 style="color: white;">Nos Projets Marquants</h1>
+        <p style="opacity: 0.8;">Découvrez comment nous avons aidé nos partenaires à atteindre leurs objectifs.</p>
+    </header>
+
+    <main class="section-padding">
+        
+        <div class="portfolio-grid">
+            
+            <div class="project-card">
+                <img src="https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=800" class="project-img" alt="Projet 1">
+                <div class="project-overlay">
+                    <span class="project-tag">Conseil</span>
+                    <h3>Restructuration d'une usine agro-alimentaire</h3>
+                    <p style="font-size: 0.9rem; opacity: 0.8; margin-top: 10px;">Optimisation de la chaîne de production et augmentation du rendement de 25% à Ouidah.</p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <img src="https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=800" class="project-img" alt="Projet 2">
+                <div class="project-overlay">
+                    <span class="project-tag">Digital</span>
+                    <h3>Déploiement ERP - Groupe BTP</h3>
+                    <p style="font-size: 0.9rem; opacity: 0.8; margin-top: 10px;">Mise en place d'un système de gestion intégré pour le suivi de 15 chantiers simultanés.</p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <img src="https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=800" class="project-img" alt="Projet 3">
+                <div class="project-overlay">
+                    <span class="project-tag">Logistique</span>
+                    <h3>Optimisation Transport - Port de Cotonou</h3>
+                    <p style="font-size: 0.9rem; opacity: 0.8; margin-top: 10px;">Réduction des délais d'attente de 40% grâce à une nouvelle stratégie de flux.</p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800" class="project-img" alt="Projet 4">
+                <div class="project-overlay">
+                    <span class="project-tag">Formation</span>
+                    <h3>Upskilling Équipes de Vente</h3>
+                    <p style="font-size: 0.9rem; opacity: 0.8; margin-top: 10px;">Formation de 50 agents commerciaux aux nouvelles techniques de négociation B2B.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <section style="background: var(--primary-light); color: white; padding: 100px 8%; text-align: center;">
+        <h2 style="color: white; margin-bottom: 20px;">Prêt à devenir notre prochain succès ?</h2>
+        <a href="contact.html" class="btn btn-accent">Démarrer un projet</a>
+    </section>
+
+    <footer style="background: var(--white); padding: 40px 8%; text-align: center; border-top: 1px solid #eee;">
+        <p style="font-size: 0.8rem; color: var(--text-muted);">© 2026 NomDeL'Entreprise — Partenaire de votre croissance au Bénin.</p>
+    </footer>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+/* --- TABLETTES (Moins de 1024px) --- */
+@media (max-width: 1024px) {
+    .navbar {
+        padding: 15px 5%;
+    }
+    
+    .section-padding {
+        padding: 80px 5%;
+    }
+
+    .hero-content h1 {
+        font-size: 3.5rem;
+    }
+}
+
+/* --- SMARTPHONES (Moins de 768px) --- */
+@media (max-width: 768px) {
+    /* Adaptation de la Navbar */
+    .nav-links {
+        display: none; /* À remplacer par un menu burger plus tard si besoin */
+    }
+
+    /* Hero Section */
+    .hero {
+        height: 80vh;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    /* Grilles : On passe tout sur une seule colonne */
+    .grid-3 {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .section-header h2 {
+        font-size: 1.8rem;
+    }
+
+    /* Réglages pour les cartes */
+    .card {
+        padding: 30px 20px;
+    }
+
+    /* On réduit la taille du bouton WhatsApp sur petit écran */
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+        font-size: 24px;
+    }
+}
+
+/* --- PETITS SMARTPHONES (Moins de 480px) --- */
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .btn {
+        width: 100%; /* Boutons en pleine largeur pour faciliter le clic au pouce */
+        margin-bottom: 10px;
+    }
+
+    .section-padding {
+        padding: 60px 20px;
+    }
+}
