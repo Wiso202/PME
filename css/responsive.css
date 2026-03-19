@@ -73,3 +73,55 @@
         padding: 60px 20px;
     }
 }
+/* --- GESTION DU MENU MOBILE --- */
+@media (max-width: 768px) {
+    .nav-btn-desktop {
+        display: none; /* Cache le bouton de devis sur mobile pour aérer */
+    }
+
+    /* Style du bouton Burger */
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+        z-index: 1001;
+    }
+
+    .menu-toggle .bar {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        background-color: var(--primary);
+        transition: all 0.3s ease-in-out;
+    }
+
+    /* Transformation du menu en rideau mobile */
+    .nav-links {
+        position: fixed;
+        top: 0;
+        left: -100%; /* Caché à gauche */
+        flex-direction: column;
+        background-color: white;
+        width: 80%; /* Largeur du menu mobile */
+        height: 100vh;
+        padding-top: 100px;
+        transition: 0.4s cubic-bezier(0.1, 0.7, 1.0, 0.1);
+        box-shadow: 10px 0 30px rgba(0,0,0,0.1);
+        z-index: 1000;
+        display: flex !important; /* Force l'affichage en flex */
+    }
+
+    .nav-links.active {
+        left: 0; /* Glisse vers l'écran */
+    }
+
+    .nav-links li {
+        margin: 20px 0;
+        text-align: center;
+    }
+
+    /* Animation du bouton Burger (Croix) */
+    .menu-toggle.is-active .bar:nth-child(2) { opacity: 0; }
+    .menu-toggle.is-active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .menu-toggle.is-active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+}
