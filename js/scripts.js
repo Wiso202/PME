@@ -47,3 +47,38 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('scroll', revealOnScroll);
 });
+document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.querySelector('#mobile-menu');
+    const navLinks = document.querySelector('#navLinks');
+
+    // Fonction pour ouvrir/fermer le menu
+    if (menuToggle) {
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuToggle.classList.toggle('is-active');
+        });
+    }
+
+    // Fermer le menu si on clique sur un lien (essentiel pour mobile)
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            menuToggle.classList.remove('is-active');
+        });
+    });
+
+    // Optionnel : Changer le fond de la navbar au scroll
+    window.addEventListener('scroll', () => {
+        const navbar = document.querySelector('.navbar');
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+});
+
+// Fonction WhatsApp
+function openWhatsApp() {
+    window.open("https://wa.me/2290100000000?text=Bonjour, je souhaite obtenir des informations sur vos services.", "_blank");
+}
