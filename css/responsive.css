@@ -15,12 +15,59 @@
 
 /* --- SMARTPHONES (Moins de 768px) --- */
 @media (max-width: 768px) {
-    /* Adaptation de la Navbar */
-    .nav-links {
-        display: none; /* À remplacer par un menu burger plus tard si besoin */
+    /* Cache le bouton de devis classique sur mobile pour aérer la barre */
+    .nav-btn-desktop {
+        display: none;
     }
 
-    /* Hero Section */
+    /* Style du bouton Burger (Les 3 barres) */
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+        z-index: 1001; /* Doit être au-dessus du rideau */
+    }
+
+    .menu-toggle .bar {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        background-color: var(--primary);
+        transition: all 0.3s ease-in-out;
+    }
+
+    /* Transformation du menu en rideau latéral mobile */
+    .nav-links {
+        position: fixed;
+        top: 0;
+        left: -100%; /* Caché hors de l'écran à gauche */
+        flex-direction: column;
+        background-color: white;
+        width: 80%; /* Largeur du menu mobile */
+        height: 100vh;
+        padding-top: 100px;
+        transition: 0.4s cubic-bezier(0.1, 0.7, 1.0, 0.1);
+        box-shadow: 10px 0 30px rgba(0,0,0,0.1);
+        z-index: 1000;
+        display: flex !important; /* Force l'affichage pour le JS */
+    }
+
+    /* Classe activée par le JavaScript au clic */
+    .nav-links.active {
+        left: 0; /* Glisse vers l'intérieur de l'écran */
+    }
+
+    .nav-links li {
+        margin: 20px 0;
+        text-align: center;
+    }
+
+    /* Animation du bouton Burger se transformant en Croix (X) */
+    .menu-toggle.is-active .bar:nth-child(2) { opacity: 0; }
+    .menu-toggle.is-active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .menu-toggle.is-active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+    /* Hero Section adaptation */
     .hero {
         height: 80vh;
     }
@@ -33,8 +80,8 @@
         font-size: 1rem;
     }
 
-    /* Grilles : On passe tout sur une seule colonne */
-    .grid-3 {
+    /* Grilles : On passe sur une seule colonne pour la lisibilité */
+    .grid-3, .portfolio-grid, .team-grid, .contact-grid {
         grid-template-columns: 1fr;
         gap: 20px;
     }
@@ -43,18 +90,16 @@
         font-size: 1.8rem;
     }
 
-    /* Réglages pour les cartes */
     .card {
         padding: 30px 20px;
     }
 
-    /* On réduit la taille du bouton WhatsApp sur petit écran */
+    /* Réduction du bouton flottant WhatsApp */
     .whatsapp-float {
         width: 50px;
         height: 50px;
         bottom: 20px;
         right: 20px;
-        font-size: 24px;
     }
 }
 
@@ -64,64 +109,14 @@
         font-size: 2.2rem;
     }
 
+    /* Boutons en pleine largeur pour faciliter le clic au pouce */
     .btn {
-        width: 100%; /* Boutons en pleine largeur pour faciliter le clic au pouce */
+        width: 100%; 
         margin-bottom: 10px;
+        text-align: center;
     }
 
     .section-padding {
         padding: 60px 20px;
     }
-}
-/* --- GESTION DU MENU MOBILE --- */
-@media (max-width: 768px) {
-    .nav-btn-desktop {
-        display: none; /* Cache le bouton de devis sur mobile pour aérer */
-    }
-
-    /* Style du bouton Burger */
-    .menu-toggle {
-        display: block;
-        cursor: pointer;
-        z-index: 1001;
-    }
-
-    .menu-toggle .bar {
-        display: block;
-        width: 25px;
-        height: 3px;
-        margin: 5px auto;
-        background-color: var(--primary);
-        transition: all 0.3s ease-in-out;
-    }
-
-    /* Transformation du menu en rideau mobile */
-    .nav-links {
-        position: fixed;
-        top: 0;
-        left: -100%; /* Caché à gauche */
-        flex-direction: column;
-        background-color: white;
-        width: 80%; /* Largeur du menu mobile */
-        height: 100vh;
-        padding-top: 100px;
-        transition: 0.4s cubic-bezier(0.1, 0.7, 1.0, 0.1);
-        box-shadow: 10px 0 30px rgba(0,0,0,0.1);
-        z-index: 1000;
-        display: flex !important; /* Force l'affichage en flex */
-    }
-
-    .nav-links.active {
-        left: 0; /* Glisse vers l'écran */
-    }
-
-    .nav-links li {
-        margin: 20px 0;
-        text-align: center;
-    }
-
-    /* Animation du bouton Burger (Croix) */
-    .menu-toggle.is-active .bar:nth-child(2) { opacity: 0; }
-    .menu-toggle.is-active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-    .menu-toggle.is-active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 }
